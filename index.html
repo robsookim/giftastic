@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+
+    <title>Giphy API</title>
+
+    <link rel="icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHDxIQExMSEhAVEBIXFhgVFxYQERAPGBkaFhUSFRMYHyggGBolHRUVITEhJikrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFy0dHSUrLS0tLS0tLS0tLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMgAyAMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAgUDBAYHAQj/xAA8EAACAQIDBAYIBQMEAwAAAAAAAQIDEQQFMQYhcbESMkFRcsEHIjNhc4GRoRNCQ2KyNILhFSOS0URSY//EABsBAQACAwEBAAAAAAAAAAAAAAADBQECBAYH/8QANhEAAgEDAQYDBgQHAQEAAAAAAAECAwQRMQUhMkFxgRJRsTNCYXKR0QYiocETFCM0UuHwYjX/2gAMAwEAAhEDEQA/APDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAShquKAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlDVcUARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKGq4oAiAAAAAAAAAAAD6AZaeHrVdIyfBNkkaU5aRb7GVFvkbNPKMfP9NrjaPMnjZV5aQffcbqjPyNqGz2Mlq4R+d+SJo7Mrc2l3N1byNrD7NxuunU3dvRjd/dokey5+HdNZ6fuYqW81FuDTfLOUvqXuD2Qyiav06k/nGFuKSuirrU6lJ4msM8xd7RvaEvBOCg+jeejzhjMti8JVjejJ05JaSblGXF6xf14Eal5kVvtqpF/1V4l8NzX7M47MctxeWy6NSDj3PWMuEtGbZyX9C5pV1mnLPquqNAyTgAAAAAAAAAAlDVcUARAAAAAAAJwXSaXe0bRWWkZSydJQybAPVzb97ST+iLqnY0NG3nqdUaMOZu08pwENKcXxvLmzqjZUI6RXfeSKlBcjZp4ehS6sYrgkieNOEdIpdkbqKWiMquzdZehsTjQqy0i+RsoSeiCTfIyLBV32W+ZuqMvI2UGZI5fN6tfdm6t3zZnwMzUsEqbupSv7twlZwnHwz3o0q28KsXGolJPkzrcuwFCrShKSbk4q+9q74I8VeU40q84R0Twj5PtZ/wAve1qNPdFSaXPcau1eWU6uBrxhTUpum+irJvpXWl+0gWpFsy5lG7pynLCzvPDqtOdGTjJNNPenuafvRufSIyUkmnlGIyZAAAAAAAAAJQ1XFAEQAAAAAADLR60fEuZvHiXUytUdUy/OwtclpxrdLpb7dG3u1O+zipJ+LfjBPRWc5LWNClH8qLBU4rkTYS5GRJI2xgyfTIAAAAB1eU+wp+FHgtpf3VT5mfHdv/8A0q/zMyY6Mp0pJK7txbOIraLSqJs5fMdmYZsrVKW+26V1Ga4Pyd0ZTLuhtR2zzCW7y1X0POtrNnamztSMHJSjOLlHsaSdrS7L8CRPJ63Zu0Y3sJSUcNPD/wBHPmSxAAAAAAABKGq4oAiAAAAAAAZaPWj4lzN48S6mVqjqmX52FxkGk+MfMsbD3uxPR5luWJOVWJ2gy3DNxlP1k2mlGTaa1Wliuq7St6bcXLeuWGRSuKcXjJoVdsMDHqwqS49GK5s5Zbborhi39F+5E7uHJNmlV20n+Wil4pOXJI5Zbdl7sPq/9EbvHyibGS7QYzMKrhJQUeg36qd73Xa2+85am2bl6YXb7nBfbRrUqalBpPONM+pdOtN9vkck9o3Utaj7bvQoam07qetR9t3odzkrvhqXgRwzk5NtvLZ4y+k5XE23l5N01OMAHHbd5BSzmVN9JwqRhJJ6xavo1/0bJ4PRbFv5WyksZi2s+fY8vzXJcdlb9ePq33Sj60H8+zg7G6aPZ217RuF+R7/J6/8AdCrMnUAAAAAAShquKAIgAAAAAAGWj1l4lzN4cS6mVqjqmX52FvkH5+MfMsbDSXYno8y4LEnPLs4/qK3xqn8meEvP7ip8z9Soq8curNI5iMAF7sl7d/DlziasrtqexXVfudeYKA7vJP6al8NGr1PM3ntp9TeMHMADWxOCpYppyvu7twJ6deVNNLmQ/wBMwbVnBST1UryTXc09zC1N/wCaq5ypY6bjwHMYxhWqJbkqk0l2JJuyJkfUKDcqUW9Wl6GoCUAAAAEoarigCIAAAAAABlo9ZeJczeHEuplao6pl+dpb7P8A5+MfMsbDSXYmo8y4LEnPLs4/qK3xqn8meEu/7ip8z9Soq8curNI5iMAF1svVp0a/rNRTg0m9ybut1zV6HDtGEpUsRWcP7nYmDzp3uSf01L4cTRnmbv20+pug5gAACMpxjq0vsbQi5PCWSWFOc3+VNv4LJ+d8zs69X4s/5Mkxg+q26xSj0XoagJQAAAAShquKAIgAAAAAAGWj1l4lzN4cS6mVqjqmX52lxkGk+MfMsbD3uxPR0ZbliTHl2b/1Fb41T+TPCXft6nzP1Kirxy6s0jmIwAAC1y7OsVgbK/Sh/wCst6XB6ow1k5K9lTq78Yfmv38zt8P6SsLg6UIRw85SjFJtyjCN/dZPca+E85U/DU6lSU3USTfk39jWl6TcxrSjGFGlBOSXrOU2rvijenTUpJPmzopfhehleOpJ9ML7mettXnFT9RR8MYr7u5cKyor3c9y2p/hvZ8NYOXWT/bBs5TmWNxUZOdWcvWWsnu3e4trG1opSfgWc+SLe12ZZQTcaME/lT9cm223rv38S0SSWEsFpBKO6Kx03eh5Ri/aT8cuZ4Kt7SXV+pTS1ZgIjUAAAAEoarigCIAAAAAABko9aPFEkOJdTK1R1bL47S4yDSfGPmWNh73Yno6MtyxJjznFZZj8diKv4dKpU/wB6p1ISkus+1I8Hdv8Ar1PmfqVcqc5Tl4Yt72blLYjaSrph5JfulCH2cjlcormbqzr/AOPoZJ7A7Sw/QvwnTb/kY/iLzMuyrL3f1RS5llWPyx2rUqlJ/ui4p8Ho/kbJp6HPOnODxJYNEyaAAz4T2kPHHmS0eOPVGY6o6hl6dhdZD1J+JcizseGXU6KOjLVeZ3MmWp5RjPaT8cubPA1faS6v1KWWrMBEYAAAABKGq4oAiAAAAAAAZaHWj4lzN4cS6mVqjqmX52FxkGk+MeTLGw0l2Oijoy2LEmOuwXs4eCPI+fXnt6nzP1Z3R0RsqxyMGWCTIm8GjIYvCUMbCVOpGM6clvjJXi/8+/U1UmnlGskpLDWUeD7ZZKshxlSim3TtGUL73+HJXSfvW9fI7IS8SyUVxS/hzcVpyKE3IDPhPaQ8ceZLR449UbR1R1DL06y6yHqT8S5FnY8Mup00dGWq8zuZKtTyutTnVqzUU2+nLck29X3HgKz/AKkur9Smlqzco7O53X6mFxM/DRqSX8TmdxSWsku6MeF+Rix+S5plqvWoVqSvrUpzppvi1YzCtTnwyT6NMNNaoriQwACUNVxQBEAAAAnCEqjSSbbei3tv3IGUsvB1GT7EZnjrSqJUIfv31GvdD/uxKqTeu4sKOzas98vyr46/T7nZYLZDKcspzl0fxanQn61T1rOz3qOi+795LCCUkWcLCjSi3jLw97/7ByC8i4Kgucg0nxjyZZWOkux0UdGW5YExy+Y7e51RnKlB06cYSlFNQUpNRdrtyvv3dx4G6S/j1Pmfqck76qm4rCxu0KqptptHP/yai4dGPJEHhXkQO7rf5M9M9GNfN8ww88RiKs6kZT6NNStuUetK9r727f2s5K7SeEWFpOpKLlJ58js2jnTOs8Q9KeMhisyml+nThTfiScn9HK3yO+isQKa8knVeOW444lOQ3cqwuIxdaEacJzl0o7oRc5a9yN4TjCcXJ4WVqbQTbWD0zLfR/n+Os5QjQj31ZWl/wjd/WxPX27aUtyk5v/yv3eEdqizs8k9HmHwMWqlaVRt3tBKnFbtLu75FbL8W1oJxo04rPOWW/osIkg3FYR0mE2byjDaUYt98rzf3Ki4/EO0q3FXaXlHEfTf+oc5PmWmFwuHwytCEIL9sYw5JFLOpKTzJtv4kWEjYuyIYMdejTxEJQnGM4STTjJKUJJ9jT3NGYycWmnhoxhM/MnpNyChs7mVWjT3UpRhUprXoQmurfuTUkvdY9jYXEq9FSlqtz7HLNYe45I7DQlDVcUARAABdbMZP/rVf8NvowUXKTWtk0rL3ttElKn43g7LK2/mKnhbwlvZ6flOTZflS/wBqnFO3WfrTf9z3/SyOxQUdEekpW1KivyRx8ef1NjHZrgcsV6tSMN2jd5vhFb39DSTS1YrVoUlmckv+8jlcz2/oVL06NNy6Xq9OfqpJ7rqK39va0RKovEkvMqq21IvMacc55v7FPaxdHCXGQaT4x5MsbDSXY6KOjLcsSY8szX29X4tT+TPBXPt5/M/Up6nHLqyOAwlXHVadKPXqTjCPik7Lmc7aSbZiMXJpLmfpLLMvpZbRp0IdSnCMV77LXi3d/MqpTbbbL6CUUorRGTFyqUac5xjKcoxk1GO+U5Jbori7IJrO94MuWE2eT4L0X7Q5xUlVxE6dBznKUuk/xKnSk7v1Y7u3tkjonfUoLEd5Ufy85NuW7J22S+irZ7AWdRTxMv3vowv4I2+7Zw1doVZbl+UmVvBa7zt8BgcJl8ehSpwpQ7oRjBfZbyvnOU3mTyyVRSWEjbiQswzIjSRgmmRtGrJxdzVo1ZOz7maGMo1cxzDCZZTdWtUhSprWU2or76v3Leb06cqj8MVl/Aw2ksn5k9Ie0NPafMKuIgmqVowp33N04Kyk12Xd3bsuexsbZ0KKi9dX1ZyTeXk5g6jUlDVcUARAABvZVmWJyqqqtN2lZp3V04vVNdxtCbi8omoV50Z+KD3lvj9s84xaspKku38NdGT/ALm218rEkq838Dqq7Tr1Nyfh6fc56pUnUbk22297e9v5kOcnA228t7z7Q68fEuZJT4l1QWqOqZfHYXGQaT4x5MsbDSXY6KOjLdFiTI8szT29X4tT+TPBXPt5/M/Up6nHLqy12Dr0sNmeFlPdH8ZK70TknFP6tHJWTdOSRvQaVSLZ+iYIp2y6ZmgkQs0ZlREzRk07EbRhn2pVp0V0pNRXfJqMfqzVRbeEss0e4pMftrkGBunXjN91JOq/qt33LCjse7q71DC85bvXf+ho5JFZH0h0MSpOlRlZO16klG+7W0b8y7s/wjKqm6tZRxyis/q8ehtBKayadfbHNqr9Vwgr/ljd/WVy9o/hLZ9PiUpv4yx+kcG6po8mzPbTabEzkpYzEW6T3RnKmrX7o2PPuxt4SajBavln1KqU3l7ypqZxmdTe69dv31JvzM/waa91fRGuX5mtXxFau7ylKT/c3J/c3UUtFgwYTIABKGq4oAiAAAAAAAZcP14+JcySnxLqjK1R1TL47C4yDSfGPJljYaS7HRR0ZbosSZHlmae3q/FqfyZ4K59vP5n6lPU45dWaqdiA0PStmfSnXwUI0sVTlWUUkqkGlVstOknuk/fdPvucdW0UnmLwdtO7aWJLPxOoXpX2cSvbEX7vw43+vTscrsqj8iZ3dP4lZjvTHho7qOFnJ99Wail/bFPmbrZ7fFL6EcrxconMZp6UtpcbdQnChH/5QXSt4pXf0sTwsaK1WepBK5m/gcxPMsdmNaEq1WpVfTjvnKU+33s77eEYziorG9EXibay8l4X51F5kPUl4vIsrHhfX9jpo6MtF5neyVanlGK68vFLmzwFTjl1ZTS1ZgIzUAAAAEoarigCIAAAAAABlw/Xj4lzJKfEuqMrVHVMvjsLjINJ8Y8mWNhpLsdFHRluixJkeWZp7er8Wp/Jngrn28/mfqU9Tjl1ZqEBoAAAAAAZ8H7WHijzJaPtI9UbR1R05enWXmQ9SXi8kWljwPqdNHRlovM7WSrU8nxXXl4nzZ4Cpxy6sppaswkZqAAAACUNVxQBEAAAAAAAy4brx8UeZJT4l1Rlao6pl8dhcZBpPjHkyysdJdjoo6Mt0WBMjyzNPb1fi1P5M8Fc+3n8z9SnqccurNQgNDLCjVqaRb4JskVOT0TfYyk3ojZp5Vjqn6cvn6vMmjZ15aQfp6m6pTfI2aeQY2WvQjxd+VyeOza71wu/2NlbzZs09m5PrVF8ot82iaOynzl9Ebq2fmbdDIcPSal0ptpp9iV18johs2nFp+JtokVCKecm1Vw8oe9fc6JU2t63mzi0WuQ9SXj8kd9jwPqT0dGWi8ztZKtTyfE9eXilzZ4Cpxy6spXqzCRmAAAAAShquKAIgAAAAAAGbDdePijzJKfEuqMrVHUsvjsLjINJ8Y8mWVjpLsdFHRlud5MczWyvBOpOTgm3KTd7ve2/eUs7Oj45Nxy235nI6UMvcTp4bD0tIQXCKRvGjTjpFLsjKilojMrvQkXwNzJGjVlpF/Q2UJPRBJvkZFg677LfNG6oz8jZQZkWX1Hq192bq3fNmfAzIsvj2yfI2VsubMqCJxwVBd7+ZuqEEZ8CM1KlTpdVW3/VkkYKOiwbJJaGReZswtTyfEdeXilzZ4Cpxy6sppaswkZqAAAACUNVxQBEAAAAAAAzYbrx8UeZJT4l1Rlao6ll8dhc5BpPjHkyxsdJdjoo6MtixJjXeEott2vv72Q/wYN5wa+FE40KUfyrmbqnFcjOEuRkSSNkkZPpkAAAAA+AGCri8LR604R4yivMhlXpx4pJdWjVyS1aNOrtBlVLWrF+HpS5I5Z7Sto6zXbL9DR3FNe8edVpKcm+xtnjZtOTaKpvLZiNTAAAAAJQ1XFAEQAAAAAADJSn+HJPuafGxtF4afkZTOjw2Mo4rR+t3Pc/8l1SrwqaPf5HVGakdDkGk+MeTLex0l2Oqjoy2LEmPj3GMoGvVx2Eo9apTjxlFeZBK4pR4ppd0aynFatGnV2iyqn+qn4VJ8kc0tp2sffz0yyN3FNe8aVba/L46RqS+SivuzmntugtIt/T7mju6fJNmlV2zf5aX/KV/skc09uv3YfV/wCiJ3nlE06m12Yz0VOPCLb+7Oae2rh6YXb7s0d3PlhGlV2gzWrrVkvDaPJHLPaN1LWb7YXoRu4qP3jSqYzE1utOcuMm/M55VqkuKTfVsjc29Wa5CagA+AAAAAAAEoarigCIAAAAAAAAPqbQzgFrgs+x+Ei4xkt7W9pSlu97O+jtCvTWIy/TLJo15wW5kaufZpW1rTXC0OVjWe0LmWs323egdeo9ZGlVxNet1pylxblzOeVWcuKTfVsicm9WYSIwAD4AAAAAAAAAAAAAAAAACUNVxQBEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEoarigCIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJQ1XFAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAShquKAP/9k=">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row"> 
+            <div class="col-md-12" id="animal-buttons"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9" id="animalsHere"></div>
+
+            <div class="col-md-3" id="animal-input">
+
+                <form id="animal-form">
+
+                    <div class="form-group">
+                        <label for="animalInput">Add more</label>
+                        <input class="form-control" type="text" id="animalInput"></input> 
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
+</body>
+
+</html> 
